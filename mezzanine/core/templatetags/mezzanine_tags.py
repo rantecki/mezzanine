@@ -183,7 +183,7 @@ def ifinstalled(parser, token):
     unmatched_end_tag = 1
     if app.strip("\"'") not in settings.INSTALLED_APPS:
         while unmatched_end_tag:
-            token = parser.tokens.pop(0)
+            token = parser.tokens.pop()
             if token.token_type == TokenType.BLOCK:
                 block_name = token.contents.split()[0]
                 if block_name == tag:
